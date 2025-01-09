@@ -10,8 +10,12 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        foreground_light: "var(--foreground_light)",
+        accent: "var(--accent)",
+        accent_dark: "var(--accent_dark)",
       },
     },
   },
+  darkMode: false,
   plugins: [],
 };
