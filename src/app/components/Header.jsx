@@ -8,6 +8,14 @@ export default function Header() {
         <ul className="flex space-x-6">
           <li>
             <a
+              href="#product"
+              className="flex py-2 text-foreground hover:text-foreground_light"
+            >
+              About Us
+            </a>
+          </li>
+          <li>
+            <a
               href="#services"
               className="flex py-2 text-foreground hover:text-foreground_light"
             >
