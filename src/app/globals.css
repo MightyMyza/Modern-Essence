@@ -4,8 +4,8 @@
 
 :root {
   --background: #E0E0E0;
-  --foreground_light: #3D3D3D; 
   --foreground: #000000;
+  --foreground_light: #3D3D3D; 
 
   --accent: #D36336;
   --accent_dark: #B85128;
