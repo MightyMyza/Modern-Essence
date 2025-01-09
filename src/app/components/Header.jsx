@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="py-4 px-10">
+    <header className="py-8 px-10">
       <nav className="flex justify-between items-center">
         <div className="font-modern text-sm text-foreground font-medium tracking-[0.5em] uppercase">
           Modern Essence
