@@ -1,8 +1,10 @@
 'use client';
 import { useState } from 'react';
+import ApplicationForm from './ApplicationForm';
 
-export default function ProductCards() {
+export default function ProductCards({ toggleForm }) {
   const [applyIndex, setApplyIndex] = useState(null);
+
   const products = [
     {
       title: 'Virtual Styling',
@@ -32,43 +34,46 @@ export default function ProductCards() {
   ];
 
   return (
-    <section id="services" className="py-12 px-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {products.map((product, index) => (
-          <div
-            key={index}
-            className="border p-6 rounded-lg shadow-sm bg-white"
-            onMouseEnter={() => setApplyIndex(index)}
-            onMouseLeave={() => setApplyIndex(null)}
-          >
-            {applyIndex === index ? (
-              <button
-                className="bg-accent hover:bg-accent_dark text-white font-bold py-2 px-4 rounded-full"
-                onClick={() => handleApplyClick}
-              >
-                Apply Now
-              </button>
-            ) : (
-              <>
-                <h3 className="text-xl font-bold mb-2 text-center">
-                  {product.title}
-                </h3>
-                <p className="mb-4 font-light text-sm">{product.description}</p>
-                <ul className="list-disc font-medium px-4">
-                  {product.features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul>
-              </>
-            )}
-          </div>
-        ))}
-      </div>
-    </section>
+    <>
+      <section id="services" className="py-12 px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
+          {products.map((product, index) => (
+            <div
+              key={index}
+              className={`border p-6 rounded-lg shadow-sm bg-cards relative min-h-[350px] min-w-[250px] ${
+                applyIndex === index
+                  ? 'flex flex-col items-center justify-center'
+                  : ''
+              }`}
+              onMouseEnter={() => setApplyIndex(index)}
+              onMouseLeave={() => setApplyIndex(null)}
+            >
+              {applyIndex === index ? (
+                <button
+                  className="bg-accent hover:bg-accent_dark text-white font-bold py-2 px-4 rounded-full"
+                  onClick={toggleForm}
+                >
+                  Apply Now
+                </button>
+              ) : (
+                <>
+                  <h3 className="text-xl font-bold mb-2 text-center">
+                    {product.title}
+                  </h3>
+                  <p className="mb-4 font-light text-sm">
+                    {product.description}
+                  </p>
+                  <ul className="list-disc font-medium px-4">
+                    {product.features.map((feature, index) => (
+                      <li key={index}>{feature}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
-}
-
-function handleApplyClick() {
-  const formModal = document.getElementById('applicationForm');
-  if (formModal) formModal.style.display = 'block';
 }

@@ -4,8 +4,7 @@ export default function HeroSection() {
   return (
     <section className="text-center py-8 px-10">
       <h2 className="text-4xl font-bold mb-4 text-foreground">
-        Transform your look. Elevate your life. Your journey to effortless style
-        starts here.
+        Your journey to effortless style starts here.
       </h2>
       <div className="flex justify-center py-5">
         <Image

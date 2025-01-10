@@ -13,6 +13,8 @@ module.exports = {
         foreground_light: "var(--foreground_light)",
         accent: "var(--accent)",
         accent_dark: "var(--accent_dark)",
+        footer: "var(--footer)",
+        cards: "var(--cards)"
       },
     },
   },

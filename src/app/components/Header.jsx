@@ -1,19 +1,19 @@
-export default function Header() {
+export default function Header({ toggleForm }) {
   return (
     <header className="py-8 px-10">
       <nav className="flex justify-between items-center">
-        <div className="font-modern text-sm text-foreground font-medium tracking-[0.5em] uppercase">
+        <div className="font-code-pro text-sm text-foreground font-medium tracking-[0.5em] uppercase">
           Modern Essence
         </div>
         <ul className="flex space-x-6">
-          <li>
+          {/* <li>
             <a
               href="#product"
               className="flex py-2 text-foreground hover:text-foreground_light"
             >
               About Us
             </a>
-          </li>
+          </li> */}
           <li>
             <a
               href="#services"
@@ -23,7 +23,10 @@ export default function Header() {
             </a>
           </li>
           <li>
-            <button className="bg-accent hover:bg-accent_dark text-white font-bold py-2 px-4 rounded-full">
+            <button
+              className="bg-accent hover:bg-accent_dark text-white font-bold py-2 px-4 rounded-full"
+              onClick={toggleForm}
+            >
               <a href="#apply">Apply now</a>
             </button>
           </li>
