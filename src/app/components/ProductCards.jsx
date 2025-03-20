@@ -34,13 +34,19 @@ export default function ProductCards({ toggleForm }) {
   ];
 
   return (
-    <>
-      <section id="services" className="py-12 px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
+    <div className="bg-cards py-8 mt-20">
+      <div className="text-center text-4xl font-bold my-4 text-accent_dark font-aleo">
+        Get your next outfit sorted
+      </div>
+      <section
+        id="services"
+        className="pt-4 pb-12 px-6 max-w-[900px] flex mx-auto"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {products.map((product, index) => (
             <div
               key={index}
-              className={`border p-6 rounded-lg shadow-sm bg-cards relative min-h-[350px] min-w-[250px] ${
+              className={`border p-6 rounded-lg shadow-sm text-foreground relative min-h-[350px] min-w-[250px] ${
                 applyIndex === index
                   ? 'flex flex-col items-center justify-center'
                   : ''
@@ -57,7 +63,7 @@ export default function ProductCards({ toggleForm }) {
                 </button>
               ) : (
                 <>
-                  <h3 className="text-xl font-bold mb-2 text-center">
+                  <h3 className="text-xl font-bold mb-2 text-center font-aleo">
                     {product.title}
                   </h3>
                   <p className="mb-4 font-light text-sm">
@@ -74,6 +80,6 @@ export default function ProductCards({ toggleForm }) {
           ))}
         </div>
       </section>
-    </>
+    </div>
   );
 }

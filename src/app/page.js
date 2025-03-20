@@ -1,12 +1,12 @@
 "use client";
-import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import ProductCards from "./components/ProductCards";
-import ProductDescription from "./components/ProductDescription";
 import Footer from "./components/Footer";
 import ApplicationForm from "./components/ApplicationForm";
+import Carousel from "./components/Carousel.jsx";
 
 import { useState } from "react";
+import InfoSection from "./components/InfoSection";
 
 export default function Home() {
   const [showForm, setShowForm] = useState(false);
@@ -17,9 +17,9 @@ export default function Home() {
   
   return (
     <>
-    <Header toggleForm={toggleForm}/>
     <HeroSection />
-    <ProductDescription />
+    <InfoSection />
+    <Carousel />
     <ProductCards toggleForm={toggleForm}/>
     {showForm && <ApplicationForm toggleForm={toggleForm} />}
     <Footer />

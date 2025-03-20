@@ -1,25 +1,13 @@
-import Image from 'next/image';
+import Header from './Header';
 
 export default function HeroSection() {
   return (
-    <section className="text-center py-8 px-10">
-      <h2 className="text-4xl font-bold mb-4 text-foreground">
-        Your journey to effortless style starts here.
-      </h2>
-      <div className="flex justify-center py-5">
-        <Image
-          src="/man-in-white-and-light-tan-outfit.jpg"
-          alt="Man in white and light tan outfit"
-          width="300"
-          height="150"
-        ></Image>
-        <Image
-          src="/pexels-aj-collins-artistry.jpg"
-          alt="Aj collins artistry"
-          width="350"
-          height="250"
-        ></Image>
-      </div>
+    <section className="bg-[url('/hero.webp')] bg-cover bg-center h-screen relative">
+      <Header />
+      <h1 className="absolute bottom-0 left-0 ml-8 flex flex-col text-[12rem] text-font tracking-widest font-code font-bold uppercase leading-none">
+        <span className="ml-4">Modern</span>
+        <span className="mt-[-2rem]">Essence</span>
+      </h1>
     </section>
   );
 }

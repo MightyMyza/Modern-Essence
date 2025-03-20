@@ -1,34 +1,31 @@
+import Image from 'next/image';
+import logo from './../../../public/ME_logo.webp';
+
+import Button from './button';
+
 export default function Header({ toggleForm }) {
   return (
-    <header className="py-8 px-10">
+    <header className="py-2 px-10">
       <nav className="flex justify-between items-center">
-        <div className="font-code-pro text-sm text-foreground font-medium tracking-[0.5em] uppercase">
-          Modern Essence
+        <div className="">
+          <Image
+            src={logo.src}
+            width="100"
+            height="100"
+            alt="Modern Essence Logo"
+          />
         </div>
         <ul className="flex space-x-6">
-          {/* <li>
-            <a
-              href="#product"
-              className="flex py-2 text-foreground hover:text-foreground_light"
-            >
-              About Us
-            </a>
-          </li> */}
           <li>
-            <a
-              href="#services"
-              className="flex py-2 text-foreground hover:text-foreground_light"
-            >
-              Styling Services
-            </a>
+            <Button className="bg-primary">Find Out More</Button>
           </li>
           <li>
-            <button
-              className="bg-accent hover:bg-accent_dark text-white font-bold py-2 px-4 rounded-full"
+            <Button
+              className="bg-accent hover:bg-accent_dark"
               onClick={toggleForm}
             >
               <a href="#apply">Apply now</a>
-            </button>
+            </Button>
           </li>
         </ul>
       </nav>
